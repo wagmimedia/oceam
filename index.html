@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCEAM - Unique Living in Matosinhos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F3F4F6; /* Light gray background */
+        }
+        /* Color Palette from Brochure */
+        :root {
+            --brand-concrete: #C5C6C8; /* A light concrete gray */
+            --brand-text: #374151; /* Dark Gray */
+            --brand-background: #FFFFFF; /* White */
+            --brand-accent: #6EE7B7; /* A subtle green/teal accent from brochure images*/
+            --brand-dark: #1F2937;
+        }
+        .text-brand { color: var(--brand-text); }
+        .bg-brand { background-color: var(--brand-background); }
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .border-brand-accent { border-color: var(--brand-accent); }
+
+        .hero-bg {
+            background-image: url('ext1noite.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-img {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 0.5rem;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--brand-accent);
+        }
+    </style>
+</head>
+<body class="text-brand">
+
+    <!-- Header -->
+    <header class="bg-brand-dark shadow-md sticky top-0 z-50 fade-in">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-white">OCEAM</a>
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300">O Conceito</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition duration-300">Galeria</a>
+                <a href="#finishes" class="text-gray-300 hover:text-white transition duration-300">Acabamentos</a>
+                <a href="#location" class="text-gray-300 hover:text-white transition duration-300">Localização</a>
+                <a href="#contact" class="bg-white text-brand-dark font-bold py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">O Conceito</a>
+            <a href="#gallery" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Galeria</a>
+            <a href="#finishes" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Acabamentos</a>
+            <a href="#location" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Localização</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen text-white flex items-center justify-center fade-in">
+        <div class="text-center bg-black bg-opacity-50 p-10 rounded-lg">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">OCEAM</h1>
+            <p class="text-xl md:text-2xl font-light">Uma forma de arte inspira uma nova forma de viver.</p>
+            <p class="text-lg md:text-xl font-light mt-2">Matosinhos, Portugal</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title text-4xl font-bold text-brand-text">LIVE. WORK. PLAY.</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Oceam representa o conceito live, work and play, um ecossistema vivo que tira o melhor partido de tudo aquilo que a cidade tem para oferecer e que promete revolucionar a forma de viver em Matosinhos. Um edifício de linhas robustas e sólidas, que lembra uma enorme pedra, esculpida naturalmente. Uma obra de arte em dois blocos de betão, caracterizada por uma enorme fenda vertical que lhe confere imponência e sugere proteção, convidando a entrar.
+            </p>
+        </div>
+
+        <div class="container mx-auto px-6 mt-16 grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <img src="ext4.jpg" alt="Interior Passage" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div class="fade-in">
+                <h3 class="text-3xl font-semibold text-brand-text mb-4">O Edifício</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Esta enorme escultura assenta numa estrutura de vidro, criando a ilusão de suspensão. Aqui, encontrará a área de receção, o espaço de coworking e uma cafetaria. O caminho que a "fenda" abre leva-nos a um jardim comum e a mais apartamentos, com espaços exteriores privativos, formando outro bloco habitacional dentro do mesmo condomínio.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    No interior, o empreendimento disponibiliza 35 modernos apartamentos, de T0 a T1 duplex, com jardins privados, acabamentos diferenciados e um design contemporâneo que privilegia o conforto e um dia a dia dinâmico e prático.
+                </p>
+            </div>
+        </div>
+
+        <!-- Collapsible Menus -->
+        <div class="container mx-auto px-6 mt-16 max-w-3xl">
+            <div class="space-y-4" id="accordion">
+                <!-- Live -->
+                <div class="bg-white rounded-lg shadow-md">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-semibold text-left text-brand-text border-b border-gray-200 rounded-t-lg focus:outline-none hover:bg-gray-50">
+                            <span>LIVE</span>
+                            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content hidden p-5">
+                        <p class="text-gray-600 leading-relaxed">
+                           Oceam representa a essência do conforto, da conveniência e da comunidade. A nossa visão é criar um ambiente onde estes elementos convergem harmoniosamente, fomentando infinitas oportunidades para interações sociais. Desde o café até aos jardins comuns, cada canto foi pensado para incentivar conexões dentro desta comunidade vibrante. No seu apartamento, priorizamos o conforto, a privacidade e o design de ponta para oferecer um refúgio de relaxamento ou um lugar para se conectar com aqueles que lhe são realmente importantes. Oceam não é apenas onde vai viver, é onde realmente pertence.
+                        </p>
+                    </div>
+                </div>
+                <!-- Work -->
+                <div class="bg-white rounded-lg shadow-md">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-semibold text-left text-brand-text border-b border-gray-200 focus:outline-none hover:bg-gray-50">
+                            <span>WORK</span>
+                            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content hidden p-5">
+                        <p class="text-gray-600 leading-relaxed">
+                           Bem-vindo a uma inigualável sinergia entre trabalho e vida no Oceam. O espaço de coworking foi projetado para preencher, de forma harmoniosa, a lacuna entre a ambição profissionais e conforto pessoal. Diga adeus a viagens desgastantes, porque no Oceam, o seu espaço de trabalho está a apenas alguns passos de sua casa. Experimente a conveniência da proximidade sem comprometer a sofisticação de um ambiente super profissional. Mergulhe em sessões de trabalho focadas em recantos cuidadosamente projetados ou colabore em espaços partilhados vibrantes que inspiram a inovação. Quer prefira o seu escritório pessoal em casa, as nossas instalações de coworking de última geração ou as amplas oportunidades profissionais na região, o Oceam é um lugar excecional para construir uma carreira.
+                        </p>
+                    </div>
+                </div>
+                <!-- Play -->
+                <div class="bg-white rounded-lg shadow-md">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-semibold text-left text-brand-text rounded-b-lg focus:outline-none hover:bg-gray-50">
+                            <span>PLAY</span>
+                            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content hidden p-5">
+                        <p class="text-gray-600 leading-relaxed">
+                           No Oceam, todos os dias são um convite aberto para abraçar o melhor dos dois mundos: a natureza e a vibração urbana. Situado entre o mar e a cidade, aqui nunca estará longe do abraço refrescante da costa ou do pulsar da cidade. Alimente o seu espirito aventureiro com atividades emocionantes como o surf ou o skate ou relaxe em passeios de bicicleta e tranquilas caminhadas à beira-mar. O regresso a casa é igualmente simples, guarde a sua prancha de surf, ou estacione a sua bicicleta de forma segura e conveniente. No entanto, o encanto vai além do toque da natureza. A cidade que o rodeia está repleta de delícias culinárias, desde restaurantes gourmet até a animada comida que faz de Matosinhos um famoso destino culinário. À medida que o sol se põe, mergulhe numa vida noturna eletrizante e em eventos que fortalecem os laços da nossa comunidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-100 fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title text-4xl font-bold text-brand-text">Galeria de Imagens</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="ext1.jpg" alt="Exterior diurno do edifício OCEAM" class="gallery-img w-full h-full object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="ext2.jpg" alt="Vista do jardim interior e edifício" class="gallery-img w-full h-full object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="ext3.jpg" alt="Caminho no jardim luxuriante do OCEAM" class="gallery-img w-full h-full object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="Oceam1 - Sala e Cozinha P3.jpg" alt="Interior de uma sala e cozinha moderna" class="gallery-img w-full h-full object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="Oceam1 - Quarto P1.jpg" alt="Quarto elegante e minimalista com mezanino" class="gallery-img w-full h-full object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="Oceam1 - Quarto P3.jpg" alt="Quarto com varanda e luz natural" class="gallery-img w-full h-full object-cover"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finishes Section -->
+    <section id="finishes" class="py-20 bg-brand fade-in">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="section-title text-4xl font-bold text-brand-text">Acabamentos de Excelência</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    A seleção de materiais, a configuração de cada apartamento e os acabamentos foram pensados para um estilo de vida contemporâneo, privilegiando o conforto e um dia a dia muito dinâmico e prático.
+                </p>
+            </div>
+            <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Estrutura e Fachada</h3>
+                    <p class="text-gray-600">Betão aparente com acabamento bojardado e caixilharias de alumínio anodizado com vidro duplo e corte térmico.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Pavimentos</h3>
+                    <p class="text-gray-600">Acabamento em betão polido com acabamento a helicóptero em todas as áreas, conferindo um look industrial e sofisticado.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Cozinhas</h3>
+                    <p class="text-gray-600">Bancada e backsplash em aço inoxidável, com eletrodomésticos Siemens (ou equivalente) e exaustor Elica.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Instalações Sanitárias</h3>
+                    <p class="text-gray-600">Loiças sanitárias suspensas Valadares e torneiras misturadoras BRUMA com acabamento cromado.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Conforto</h3>
+                    <p class="text-gray-600">Portas interiores em MDF hidrófugo lacado a branco e sistema de cortinas com calha embutida para um acabamento limpo.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-brand-dark">Áreas Comuns</h3>
+                    <p class="text-gray-600">Design contínuo com tetos, pavimentos e paredes em betão à vista. Elevadores panorâmicos com paredes e teto em vidro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Location Section -->
+    <section id="location" class="py-20 bg-gray-100 fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title text-4xl font-bold text-brand-text">Perto de Tudo o Que Importa</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+                Situado entre o mar e a cidade, nunca estará longe do abraço refrescante da costa ou do pulsar da cidade.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-brand-text">
+                <div class="text-center">
+                    <p class="text-3xl font-bold">350m</p>
+                    <p>da Praia</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold">300m</p>
+                    <p>do Metro</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold">800m</p>
+                    <p>do Parque da Cidade</p>
+                </div>
+                 <div class="text-center">
+                    <p class="text-3xl font-bold">12min</p>
+                    <p>do Aeroporto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-dark text-white fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title text-4xl font-bold">Peça Mais Informações</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
+                Interessado em saber mais sobre o OCEAM? Preencha o formulário abaixo e entraremos em contacto consigo brevemente.
+            </p>
+            <form class="max-w-xl mx-auto">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-first-name">Nome</label>
+                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" id="grid-first-name" type="text" placeholder="O seu nome">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
+                        <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-email">Email</label>
+                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600 focus:border-gray-500" id="grid-email" type="email" placeholder="O seu email">
+                    </div>
+                </div>
+                 <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-message">Mensagem</label>
+                        <textarea class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 focus:border-gray-500 h-48" id="grid-message" placeholder="Escreva a sua mensagem..."></textarea>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button class="bg-white text-brand-dark font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300" type="button">
+                        Enviar Pedido
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 OCEAM. Todos os direitos reservados. Promovido por ASPIRE.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+
+                // Ensure the href is not just '#'
+                if (href.length > 1) {
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.parentElement.nextElementSibling;
+                const icon = button.querySelector('svg');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Optional: Close other accordions
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.parentElement.nextElementSibling.classList.add('hidden');
+                        otherButton.querySelector('svg').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
